@@ -14,9 +14,11 @@ RUN apk --update --no-cache add \
     less \
     mailcap \
     bash \
-    &amp;&amp; pip install --no-cache-dir awscli==$AWS_CLI_VERSION \
-    &amp;&amp; apk del py-pip \
-    &amp;&amp; rm -rf /var/cache/apk/* /root/.cache/pip/*
+    pip install --no-cache-dir awscli==$AWS_CLI_VERSION \
+    apk del py-pip \
+    rm -rf /var/cache/apk/* /root/.cache/pip/*
+
+RUN gem install ufo
 
 WORKDIR /root
 VOLUME /root/.aws
