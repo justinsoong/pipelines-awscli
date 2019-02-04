@@ -1,8 +1,6 @@
 FROM ruby:2.6-alpine3.8
 MAINTAINER justinsoong
 
-ENV AWS_CLI_VERSION=$VERSION
-
 RUN apk --update --no-cache add \
     python \
     py-pip \
@@ -13,7 +11,7 @@ RUN apk --update --no-cache add \
     less \
     mailcap \
     bash \
-    pip install --no-cache-dir awscli==$AWS_CLI_VERSION \
+    pip install --no-cache-dir awscli \
     apk del py-pip \
     rm -rf /var/cache/apk/* /root/.cache/pip/*
 
