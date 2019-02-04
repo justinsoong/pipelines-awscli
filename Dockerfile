@@ -1,7 +1,6 @@
 FROM ruby:2.6-alpine3.8
 MAINTAINER justinsoong
 
-ARG VERSION
 ENV AWS_CLI_VERSION=$VERSION
 
 RUN apk --update --no-cache add \
